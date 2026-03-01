@@ -1,0 +1,261 @@
+.apply-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: var(--radius-lg);
+}
+
+.apply-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.apply-header h1 {
+    color: var(--color-dark);
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.apply-header p {
+    color: #64748B;
+    font-size: 15px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background: #fff;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(31, 162, 182, 0.05);
+}
+
+/* تنسيق خاص لرفع الملفات */
+.file-input-wrapper {
+    border: 2px dashed var(--color-border);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.file-input-wrapper:hover {
+    border-color: var(--color-primary);
+    background: rgba(31, 162, 182, 0.02);
+}
+
+.file-input-wrapper i {
+    font-size: 30px;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.btn-submit {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    display: flex;
+    margin-inline: auto;
+
+}
+
+.btn-submit:hover {
+    background: #178a9a;
+    transform: translateY(-2px);
+}
+
+.notification-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.noti-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--color-dark);
+    cursor: pointer;
+    position: relative;
+    padding: 5px;
+}
+
+.noti-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #FF4D4D;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.noti-dropdown {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--color-border);
+    display: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.noti-dropdown.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.noti-header {
+    padding: 15px;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.noti-header h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.clear-all {
+    color: var(--color-primary);
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.noti-list {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.noti-item {
+    padding: 15px;
+    display: flex;
+    gap: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    transition: 0.2s;
+    position: relative;
+}
+
+.noti-item:hover {
+    background: #f8fafc;
+}
+
+.noti-item.unread {
+    background: #f0f9fb;
+}
+
+.noti-icon {
+    color: var(--color-primary);
+    font-size: 18px;
+}
+
+.noti-icon.alert {
+    color: #f59e0b;
+}
+
+.noti-icon.check {
+    color: #10b981;
+}
+
+.noti-content p {
+    font-size: 13px;
+    margin: 0 0 5px;
+    line-height: 1.4;
+    color: var(--color-dark);
+}
+
+.noti-content span {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.delete-noti {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    border: none;
+    background: none;
+    color: #cbd5e1;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.noti-item:hover .delete-noti {
+    opacity: 1;
+    color: #ef4444;
+}
+
+.noti-footer {
+    padding: 12px;
+    text-align: center;
+    background: #f8fafc;
+}
+
+.noti-footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .apply-container {
+        padding: 25px;
+    }
+}

@@ -1,0 +1,125 @@
+.companies {
+    padding: var(--space-xxl) var(--space-padding);
+    background-color: var(--color-bg);
+    direction: rtl;
+}
+
+.companies__header {
+    text-align: center;
+    margin-bottom: var(--space-xxl);
+}
+
+.companies__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: var(--space-sm);
+}
+
+.companies__subtitle {
+    color: var(--color-text-light);
+    font-size: 16px;
+}
+
+.companies__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card Style */
+.company-card {
+    background: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.company-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.company-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.company-card__logo-wrapper {
+    width: 60px;
+    height: 60px;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.company-card__logo {
+    width: 80%;
+    object-fit: fill;
+}
+
+.company-card__name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+.company-card__tag {
+    font-size: 12px;
+    color: var(--color-primary);
+    background: rgba(31, 162, 182, 0.1);
+    padding: 2px 8px;
+    border-radius: var(--radius-md);
+}
+
+.company-card__description {
+    font-size: 14px;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    flex-grow: 1;
+}
+
+.company-card__btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.companies__footer {
+    text-align: center;
+    margin-top: var(--space-xxl);
+}
+
+.companies__link {
+    text-decoration: none;
+    color: var(--color-text-light);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.companies__link:hover {
+    color: var(--color-primary);
+}
+
+/* ===== Responsive adjustments ===== */
+@media (max-width: 768px) {
+    .companies__title {
+        font-size: 26px;
+    }
+
+    .companies__grid {
+        grid-template-columns: 1fr;
+    }
+}

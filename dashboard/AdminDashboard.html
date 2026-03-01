@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الادارة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/jops.css" />
+    <link rel="stylesheet" href="../style/profile.css" />
+    <link rel="stylesheet" href="../style/opp.css" />
+    <link rel="stylesheet" href="../style/applay.css" />
+    <link rel="stylesheet" href="../style/dash_publish_section.css" />
+    <link rel="stylesheet" href="../style/dash-student-order.css" />
+    <link rel="stylesheet" href="../style/adminDashboard.css" />
+    <link rel="stylesheet" href="../style/footer.css" />
+    <link rel="stylesheet" href="../style/notifi.css" />
+    <link rel="stylesheet" href="../style/report.css" />
+    <link rel="stylesheet" href="../style/company_reqest.css" />
+    <link rel="stylesheet" href="../style/main_dashboard.css" />
+
+
+</head>
+
+
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h2 style="color: var(--primary); font-size: 22px;">لوحة الإدارة</h2>
+            </div>
+            <p style="font-size: 16px; color: var(--text-light);" class="logoText">نظام Nexus</p>
+        </div>
+        <nav class="sidebar-menu">
+            <a href="#" class="menu-item active" data-target="admin-overview">
+                <i class="fa-solid fa-chart-line"></i> <span>نظرة عامة</span>
+            </a>
+            <a href="#" class="menu-item" data-target="manage-users-section">
+                <i class="fa-solid fa-users"></i> <span>إدارة المستخدمين</span>
+            </a>
+            <a href="#" class="menu-item" data-target="manage-opportunities-section">
+                <i class="fa-solid fa-briefcase"></i> <span>إدارة الفرص</span>
+            </a>
+            <a href="#" class="menu-item" data-target="company-requests-section">
+                <i class="fa-solid fa-building"></i> <span>طلبات الشركات</span>
+            </a>
+            <a href="#" class="menu-item" data-target="notifications-section">
+                <i class="fa-solid fa-bell"></i> <span>الإشعارات</span>
+            </a>
+            <a href="#" class="menu-item" data-target="admin-reports">
+                <i class="fa-solid fa-file-invoice"></i> <span>التقارير</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <!-- ===== Navbar ===== -->
+        <header class="navbar">
+            <div class="navbar__wrapper">
+
+                <div class="navbar__logo">
+                    <h2 id="header-title">الرئيسية</h2>
+                </div>
+
+
+                <div class="header-actions">
+                    <div class="user-dropdown">
+                        <div class="profile-trigger" onclick="toggleDropdown()">
+                            <img src="../img/hero.png" alt="User" class="nav-avatar">
+                        </div>
+
+                        <div class="dropdown-menu" id="userMenu">
+                            <a href="profile-setting.html" class="dropdown-item">
+                                <i class="fa-regular fa-user"></i>
+                                <span>الملف الشخصي</span>
+                            </a>
+                            <a href="profile-password.html" class="dropdown-item">
+                                <i class="fa-regular fa-sun"></i>
+                                <span>الإعدادات</span>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="index.html" class="dropdown-item logout">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <span>تسجيل الخروج</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="notification-wrapper">
+                        <button class="noti-btn" id="notiBtn">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="noti-badge">3</span>
+                        </button>
+
+                        <div class="noti-dropdown" id="notiDropdown">
+                            <div class="noti-header">
+                                <h3>الإشعارات</h3>
+                                <button class="clear-all">مسح الكل</button>
+                            </div>
+
+                            <div class="noti-list">
+                                <div class="noti-item unread">
+                                    <div class="noti-icon"><i class="fa-solid fa-briefcase"></i></div>
+                                    <div class="noti-content">
+                                        <p><strong>فرصة تدريب جديدة:</strong> تم نشر فرصة بعنوان "تسويق رقمي"</p>
+                                        <span>منذ 5 دقائق</span>
+                                    </div>
+                                    <button class="delete-noti"><i class="fa-regular fa-trash-can"></i></button>
+                                </div>
+
+                                <div class="noti-item">
+                                    <div class="noti-icon alert"><i class="fa-solid fa-circle-exclamation"></i></div>
+                                    <div class="noti-content">
+                                        <p>تم رفض طلبك للتدريب في شركة <strong>أبجد</strong></p>
+                                        <span>منذ ساعتين</span>
+                                    </div>
+                                    <button class="delete-noti"><i class="fa-regular fa-trash-can"></i></button>
+                                </div>
+
+                                <div class="noti-item success">
+                                    <div class="noti-icon check"><i class="fa-solid fa-circle-check"></i></div>
+                                    <div class="noti-content">
+                                        <p>تم قبول طلبك المبدئي لفرصة "فرونت إند"</p>
+                                        <span>أمس</span>
+                                    </div>
+                                    <button class="delete-noti"><i class="fa-regular fa-trash-can"></i></button>
+                                </div>
+                            </div>
+                            <div class="noti-footer">
+                                <a href="#">عرض جميع الإشعارات</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="admin-overview" class="card-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>إجمالي المستخدمين</h4><span>26</span>
+                        <small style="color: green;">↑ 12%</small>
+                    </div>
+                    <div class="stat-icon" style="background: #e0f2fe; color: #0ea5e9;"><i
+                            class="fa-solid fa-user-group"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>الفرص النشطة</h4><span>8</span>
+                        <small style="color: green;">↑ 5%</small>
+                    </div>
+                    <div class="stat-icon" style="background: #dcfce7; color: #22c55e;"><i
+                            class="fa-solid fa-briefcase"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>إجمالي الطلبات</h4><span>15</span>
+                        <small style="color: green;">↑ 15%</small>
+                    </div>
+                    <div class="stat-icon" style="background: #fef9c3; color: #ca8a04;"><i
+                            class="fa-solid fa-file-signature"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>في الانتظار</h4><span>3</span>
+                    </div>
+                    <div class="stat-icon" style="background: #fee2e2; color: #ef4444;"><i
+                            class="fa-solid fa-clock-rotate-left"></i></div>
+                </div>
+            </div>
+
+            <div class="admin-charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>توزيع المستخدمين</h3>
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+                    <div class="chart-content">
+                        <div class="dist-item">
+                            <div class="dist-info"><span>الطلاب</span> <span>20</span></div>
+                            <div class="progress-bar">
+                                <div class="progress p-students" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="dist-item">
+                            <div class="dist-info"><span>الشركات</span> <span>5</span></div>
+                            <div class="progress-bar">
+                                <div class="progress p-companies" style="width: 20%;"></div>
+                            </div>
+                        </div>
+                        <div class="dist-item">
+                            <div class="dist-info"><span>المشرفون</span> <span>1</span></div>
+                            <div class="progress-bar">
+                                <div class="progress p-admins" style="width: 5%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>حالة الفرص</h3>
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <div class="chart-content">
+                        <ul class="status-list">
+                            <li class="status-li active">
+                                <span class="dot"></span>
+                                <span class="label">فرص نشطة</span>
+                                <span class="count">5</span>
+                            </li>
+                            <li class="status-li waiting">
+                                <span class="dot"></span>
+                                <span class="label">في الانتظار</span>
+                                <span class="count">3</span>
+                            </li>
+                            <li class="status-li expired">
+                                <span class="dot"></span>
+                                <span class="label">منتهية</span>
+                                <span class="count">0</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="manage-users-section" class="card-content" style="display: none;">
+
+
+            <div class="new-box" style="margin-top: 20px; overflow-x: auto;">
+                <div class="filter-title filter-container">
+                    <h3>قائمة المستخدمين</h3>
+                    <p>إدارة كافة الحسابات المسجلة في النظام</p>
+                    <div class="filter-dropdown">
+                        <button class="dropdown-btn" class="filterDropdownBtn">
+                            <span>جميع المستخدمين</span> <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu" id="filterMenu">
+                            <li data-filter="all" class="active">جميع المستخدمين</li>
+                            <li data-filter="نشط">نشط</li>
+                            <li data-filter="في الانتظار">في الانتظار</li>
+                            <li data-filter="محظور">محظور</li>
+                        </ul>
+                    </div>
+                </div>
+                <table class="manage-table">
+                    <thead>
+                        <tr>
+                            <th>المستخدم</th>
+                            <th>النوع</th>
+                            <th>الحالة</th>
+                            <th>تاريخ الانضمام</th>
+                            <th>آخر نشاط</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <i class="fa-solid fa-circle-user" style="font-size: 24px; color: #64748b;"></i>
+                                    <div>
+                                        <div style="font-weight: 600;">zain</div>
+                                        <div style="font-size: 12px; color: #94a3b8;">zain@gmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="type-tag">طالب</span></td>
+                            <td><span class="status-badge success">نشط</span></td>
+                            <td>2025-10-12</td>
+                            <td><span style="color: #64748b;">منذ يومين</span></td>
+                            <td class="actions">
+                                <div style="display: flex; gap: 5px;">
+                                    <button class="btn-view" title="عرض التفاصيل"><i
+                                            class="fa-solid fa-eye"></i></button>
+                                    <button class="btn-success" title="موافقة"><i
+                                            class="fa-solid fa-check"></i></button>
+                                    <button class="btn-danger" title="حظر"><i class="fa-solid fa-ban"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <i class="fa-solid fa-circle-user" style="font-size: 24px; color: #64748b;"></i>
+                                    <div>
+                                        <div style="font-weight: 600;">Wal</div>
+                                        <div style="font-size: 12px; color: #94a3b8;">walid@gmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="type-tag">شركة</span></td>
+                            <td><span class="status-badge pending">في الانتظار</span></td>
+                            <td>2025-11-05</td>
+                            <td><span style="color: #64748b;">الآن</span></td>
+                            <td class="actions">
+                                <div style="display: flex; gap: 5px;">
+                                    <button class="btn-view" title="عرض التفاصيل"><i
+                                            class="fa-solid fa-eye"></i></button>
+                                    <button class="btn-success" title="موافقة"><i
+                                            class="fa-solid fa-check"></i></button>
+                                    <button class="btn-danger" title="حظر"><i class="fa-solid fa-ban"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+        <div id="manage-opportunities-section" class="card-content" style="display: none;">
+            <div class="filter-container">
+                <div class="filter-title">
+                    <h3>إدارة الفرص</h3>
+                    <p>مراجعة واعتماد فرص التدريب المنشورة من قبل الشركات</p>
+                </div>
+                <div class="filter-dropdown">
+                    <button class="dropdown-btn" class="filterDropdownBtn">
+                        <span>جميع المستخدمين</span> <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" id="filterMenu">
+                        <li data-filter="all" class="active">جميع المستخدمين</li>
+                        <li data-filter="نشط">نشط</li>
+                        <li data-filter="في الانتظار">في الانتظار</li>
+                        <li data-filter="محظور">محظور</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="new-box" style="margin-top: 20px; overflow-x: auto;">
+                <table class="manage-table">
+                    <thead>
+                        <tr>
+                            <th>الفرصة</th>
+                            <th>الشركة</th>
+                            <th>الحالة</th>
+                            <th>المتقدمين</th>
+                            <th>تاريخ النشر / الموعد</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AI Developer</strong></td>
+                            <td><span style="color: #64748b;">شركات ناشئة محلية</span></td>
+                            <td><span class="status-badge success">موافق عليه</span></td>
+                            <td><span class="type-tag">0</span></td>
+                            <td>
+                                <div style="font-size: 11px;">2025-11-23<br>T08:33:59</div>
+                            </td>
+                            <td class="actions">
+                                <div style="display: flex; gap: 5px;">
+                                    <button class="btn-view"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="btn-success"><i class="fa-solid fa-check"></i></button>
+                                    <button class="btn-danger"><i class="fa-solid fa-xmark"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>تسويق رقمي</strong></td>
+                            <td><span style="color: #64748b;">شركات ناشئة محلية</span></td>
+                            <td><span class="status-badge danger">مرفوض</span></td>
+                            <td><span class="type-tag">0</span></td>
+                            <td>
+                                <div style="font-size: 11px;">2025-12-04<br>T10:17:51</div>
+                            </td>
+                            <td class="actions">
+                                <div style="display: flex; gap: 5px;">
+                                    <button class="btn-view"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="btn-success"><i class="fa-solid fa-check"></i></button>
+                                    <button class="btn-danger"><i class="fa-solid fa-xmark"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="notifications-section" class="card-content" style="display: none;">
+            <div class="filter-container">
+                <div class="filter-title">
+                    <h3>الإشعارات</h3>
+                    <p>متابعة آخر الأنشطة والعمليات في النظام</p>
+                </div>
+                <button class="filter-btn"
+                    style="color: var(--primary); background: none; border: 1px solid var(--primary);">
+                    تحديد الكل كمقروء
+                </button>
+            </div>
+
+            <div class="notifications-list" style="margin-top: 20px;">
+
+                <div class="notification-item">
+                    <div class="noti-icon company"><i class="fa-solid fa-building-circle-check"></i></div>
+                    <div class="noti-details">
+                        <div class="noti-header">
+                            <h4>شركة جديدة</h4>
+                            <span class="noti-time">12:28:05 2025/12/17 م</span>
+                        </div>
+                        <p>تم تسجيل الشركة <strong>كود بنجاح</strong></p>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="noti-icon student"><i class="fa-solid fa-user-plus"></i></div>
+                    <div class="noti-details">
+                        <div class="noti-header">
+                            <h4>طالب جديد</h4>
+                            <span class="noti-time">10:56:33 2025/12/04 م</span>
+                        </div>
+                        <p>تم تسجيل الطالب <strong>محمد عبد الفتاح</strong> بنجاح</p>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="noti-icon company"><i class="fa-solid fa-building-circle-check"></i></div>
+                    <div class="noti-details">
+                        <div class="noti-header">
+                            <h4>شركة جديدة</h4>
+                            <span class="noti-time">2:18:12 2025/12/03 م</span>
+                        </div>
+                        <p>تم تسجيل الشركة <strong>Company</strong> بنجاح</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="company-requests-section" class="card-content" style="display: none;">
+            <div class="filter-container">
+                <div class="filter-title">
+                    <h3>طلبات انضمام الشركات</h3>
+                    <p>مراجعة بيانات الشركات الجديدة وتدقيق هويتها قبل التفعيل</p>
+                </div>
+                <div class="filter-dropdown">
+                    <button class="dropdown-btn">
+                        <span>قيد الانتظار</span> <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li data-filter="all">الكل</li>
+                        <li data-filter="في الانتظار" class="active">قيد الانتظار</li>
+                        <li data-filter="مرفوض">مرفوض</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="requests-list" style="margin-top: 25px;">
+                <div class="company-card-request animate-card">
+                    <div class="company-main-info">
+                        <div class="company-logo-placeholder">
+                            <i class="fa-solid fa-building-shield"></i>
+                        </div>
+                        <div class="company-text">
+                            <h4>شركة كود بنجاح للبرمجيات</h4>
+                            <p><i class="fa-solid fa-location-dot"></i> غزة - الرمال - برج فلسطين</p>
+                            <div class="badges-row">
+                                <span class="type-tag">تكنولوجيا</span>
+                                <span class="status-badge pending">في الانتظار</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="company-extra-details">
+                        <div class="detail-item">
+                            <span>رقم السجل:</span>
+                            <strong>56322109</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span>البريد الإلكتروني:</span>
+                            <strong>hr@codesuccess.ps</strong>
+                        </div>
+                    </div>
+
+                    <div class="request-actions">
+                        <button class="btn-success"><i class="fa-solid fa-check"></i> اعتماد الشركة</button>
+                        <button class="btn-view"><i class="fa-solid fa-file-pdf"></i> المستندات</button>
+                        <button class="btn-danger"><i class="fa-solid fa-trash"></i> رفض</button>
+                    </div>
+                </div>
+
+                <div class="company-card-request animate-card" style="animation-delay: 0.2s;">
+                    <div class="company-main-info">
+                        <div class="company-logo-placeholder">
+                            <i class="fa-solid fa-building-shield"></i>
+                        </div>
+                        <div class="company-text">
+                            <h4>مؤسسة آفاق للتدريب</h4>
+                            <p><i class="fa-solid fa-location-dot"></i> خان يونس - البلد</p>
+                            <div class="badges-row">
+                                <span class="type-tag">تعليم</span>
+                                <span class="status-badge pending">في الانتظار</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="request-actions">
+                        <button class="btn-success"><i class="fa-solid fa-check"></i> اعتماد الشركة</button>
+                        <button class="btn-view"><i class="fa-solid fa-file-pdf"></i> المستندات</button>
+                        <button class="btn-danger"><i class="fa-solid fa-trash"></i> رفض</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="admin-reports" class="card-content" style="display: none;">
+            <div class="filter-container">
+                <div class="filter-title">
+                    <h3>التقارير والتحليلات</h3>
+                    <p>ملخص أداء النظام والنشاط الأسبوعي</p>
+                </div>
+            </div>
+
+            <div class="reports-grid" style="margin-top: 20px; display: flex; flex-direction: row-reverse; gap: 5px;">
+
+                <div class="recent-box" style="flex: 1;">
+                    <h3>إحصائيات شاملة</h3>
+                    <div class="stat-list">
+                        <div class="stat-item blue-light">
+                            <span>إجمالي المستخدمين المسجلين</span>
+                            <strong>26</strong>
+                        </div>
+                        <div class="stat-item green-light">
+                            <span>الفرص المنشورة</span>
+                            <strong>10</strong>
+                        </div>
+                        <div class="stat-item purple-light">
+                            <span>إجمالي الطلبات المقدمة</span>
+                            <strong>0</strong>
+                        </div>
+                        <div class="stat-item orange-light">
+                            <span>الفرص المعلقة</span>
+                            <strong>1</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-box">
+                    <h3>معدل النشاط - الفرص آخر 7 أيام</h3>
+                    <div class="chart-container">
+                        <div class="simple-bar-chart">
+                            <div class="bar" style="height: 80%;" data-label="12-04"></div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>2025-12-02</span>
+                            <span>2025-12-04</span>
+                            <span>2025-12-08</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-box" style="margin-top: 25px;">
+                <h3>تقرير النشاط الأسبوعي</h3>
+                <div class="weekly-stats-grid">
+                    <div class="weekly-card blue">
+                        <strong>0</strong>
+                        <span>طلبات جديدة هذا الأسبوع</span>
+                    </div>
+                    <div class="weekly-card green">
+                        <strong>1</strong>
+                        <span>فرص جديدة هذا الأسبوع</span>
+                    </div>
+                    <div class="weekly-card purple">
+                        <strong>0</strong>
+                        <span>طلبات جديدة هذا الأسبوع</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <script>
+        const menuItems = document.querySelectorAll('.sidebar-menu .menu-item');
+        const sections = document.querySelectorAll('.main-content > div[id]');
+        const headerTitle = document.getElementById('header-title');
+
+        function showSection(targetId) {
+            sections.forEach(section => {
+                section.style.display = 'none';
+                section.style.opacity = '0';
+            });
+
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                setTimeout(() => {
+                    targetSection.style.opacity = '1';
+                    targetSection.style.transition = 'opacity 0.3s ease';
+                }, 50);
+            }
+        }
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('data-target');
+                const sectionName = this.querySelector('span').innerText;
+
+                if (headerTitle) headerTitle.innerText = sectionName;
+
+                menuItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+
+                showSection(targetId);
+            });
+        });
+    </script>
+
+
+    <!-- فلترة المستخدمين -->
+    <script>
+        document.querySelectorAll('.dropdown-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    if (menu !== this.nextElementSibling) menu.classList.remove('show');
+                });
+                this.nextElementSibling.classList.toggle('show');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.remove('show'));
+        });
+
+        document.querySelectorAll('.dropdown-menu li').forEach(item => {
+            item.addEventListener('click', function () {
+                const filterValue = this.getAttribute('data-filter');
+                const section = this.closest('.card-content');
+                const dropdown = this.closest('.filter-dropdown');
+                const rows = section.querySelectorAll('tbody tr');
+
+                dropdown.querySelector('.dropdown-btn span').textContent = this.textContent;
+
+                dropdown.querySelectorAll('li').forEach(li => li.classList.remove('active'));
+                this.classList.add('active');
+
+                rows.forEach(row => {
+                    const statusBadge = row.querySelector('.status-badge');
+                    if (!statusBadge) return;
+
+                    const statusText = statusBadge.textContent.trim();
+                    if (filterValue === 'all' || statusText === filterValue) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

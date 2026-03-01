@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الشركات - Nexus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/jops.css" />
+    <link rel="stylesheet" href="../style/profile.css" />
+    <link rel="stylesheet" href="../style/opp.css" />
+    <link rel="stylesheet" href="../style/applay.css" />
+    <link rel="stylesheet" href="../style/dash_publish_section.css" />
+    <link rel="stylesheet" href="../style/dash-student-order.css" />
+    <link rel="stylesheet" href="../style/footer.css" />
+    <link rel="stylesheet" href="../style/main_dashboard.css" />
+
+</head>
+
+
+
+<body>
+
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 10px; ">
+                <a href="AdminDashboard.html"> <img src="../img/logo.jpeg" alt=""
+                        style=" height: 50px; font-weight: 900;"></a>
+                <h2 style="color: var(--primary); font-size: 22px;">لوحة الشركات</h2>
+            </div>
+            <p style="font-size: 16px; color: var(--text-light);">Nexus</p>
+        </div>
+        <nav class="sidebar-menu">
+            <a href="#" class="menu-item active" data-target="main-dashboard">
+                <i class="fa-solid fa-house"></i> <span>الرئيسية</span>
+            </a>
+            <a href="#" class="menu-item" data-target="manage-jobs-section">
+                <i class="fa-solid fa-briefcase"></i> <span>إدارة الفرص</span>
+            </a>
+            <a href="#" class="menu-item" data-target="publish-section">
+                <i class="fa-solid fa-plus"></i> <span> جديدة نشر فرصة</span>
+            </a>
+            <a href="#" class="menu-item" data-target="student-applications-section">
+                <i class="fa-solid fa-users-rectangle"></i> <span>طلبات الطلاب</span>
+            </a>
+            <a href="#" class="menu-item" data-target="settings-section">
+                <i class="fa-solid fa-gear"></i> <span>اعدادات الملف الشخصي</span>
+            </a>
+        </nav>
+    </aside>
+
+
+    <main class="main-content">
+        <!-- ===== Navbar ===== -->
+        <header class="navbar">
+            <div class="navbar__wrapper">
+
+                <div class="navbar__logo">
+                    <h2 id="header-title">الرئيسية</h2>
+                </div>
+
+
+                <div class="header-actions">
+                    <div class="user-dropdown">
+                        <div class="profile-trigger" onclick="toggleDropdown()">
+                            <img src="../img/hero.png" alt="User" class="nav-avatar">
+                        </div>
+
+                        <div class="dropdown-menu" id="userMenu">
+                            <a href="profile-setting.html" class="dropdown-item">
+                                <i class="fa-regular fa-user"></i>
+                                <span>الملف الشخصي</span>
+                            </a>
+                            <a href="profile-password.html" class="dropdown-item">
+                                <i class="fa-regular fa-sun"></i>
+                                <span>الإعدادات</span>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="index.html" class="dropdown-item logout">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <span>تسجيل الخروج</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="notification-wrapper">
+                        <button class="noti-btn" id="notiBtn">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="noti-badge">3</span>
+                        </button>
+
+                        <div class="noti-dropdown" id="notiDropdown">
+                            <div class="noti-header">
+                                <h3>الإشعارات</h3>
+                                <button class="clear-all">مسح الكل</button>
+                            </div>
+
+                            <div class="noti-list">
+                                <div class="noti-item unread">
+                                    <div class="noti-icon"><i class="fa-solid fa-briefcase"></i></div>
+                                    <div class="noti-content">
+                                        <p><strong>فرصة تدريب جديدة:</strong> تم نشر فرصة بعنوان "تسويق رقمي"</p>
+                                        <span>منذ 5 دقائق</span>
+                                    </div>
+                                    <button class="delete-noti"><i class="fa-regular fa-trash-can"></i></button>
+                                </div>
+
+                                <div class="noti-item">
+                                    <div class="noti-icon alert"><i class="fa-solid fa-circle-exclamation"></i></div>
+                                    <div class="noti-content">
+                                        <p>تم رفض طلبك للتدريب في شركة <strong>أبجد</strong></p>
+                                        <span>منذ ساعتين</span>
+                                    </div>
+                                    <button class="delete-noti"><i class="fa-regular fa-trash-can"></i></button>
+                                </div>
+
+                                <div class="noti-item success">
+                                    <div class="noti-icon check"><i class="fa-solid fa-circle-check"></i></div>
+                                    <div class="noti-content">
+                                        <p>تم قبول طلبك المبدئي لفرصة "فرونت إند"</p>
+                                        <span>أمس</span>
+                                    </div>
+                                    <button class="delete-noti"><i class="fa-regular fa-trash-can"></i></button>
+                                </div>
+                            </div>
+                            <div class="noti-footer">
+                                <a href="#">عرض جميع الإشعارات</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="main-dashboard" class="card-content">
+
+            <div class=" stats-grid ">
+                <div class=" stat-card">
+                    <div class="stat-info">
+                        <h4>إجمالي الفرص</h4><span>4</span>
+                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>طلبات التقديم</h4><span>2</span>
+                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-user-plus"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>في الانتظار</h4><span>1</span>
+                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>المقبولين</h4><span>1</span>
+                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-check-double"></i></div>
+                </div>
+            </div>
+
+            <div class="recent-box">
+                <h3>الفرص المنشورة مؤخراً</h3>
+                <div class="job-list">
+                    <div class="job-item">
+                        <div>
+                            <div class="job-title">باك اند</div>
+                            <div class="job-date">عن بعد • آخر موعد: 2025/11/26</div>
+                        </div>
+                        <span class="job-status status-wait">في الانتظار (1 متقدم)</span>
+                    </div>
+                    <div class="job-item">
+                        <div>
+                            <div class="job-title">Frontend Developer</div>
+                            <div class="job-date">عن بعد • آخر موعد: 2025/11/21</div>
+                        </div>
+                        <span class="job-status status-active">موافق عليه (0 متقدم)</span>
+                    </div>
+                    <div class="job-item">
+                        <div>
+                            <div class="job-title">باك اند</div>
+                            <div class="job-date">عن بعد • آخر موعد: 2025/11/26</div>
+                        </div>
+                        <span class="job-status status-wait">في الانتظار (1 متقدم)</span>
+                    </div>
+                    <div class="job-item">
+                        <div>
+                            <div class="job-title">Frontend Developer</div>
+                            <div class="job-date">عن بعد • آخر موعد: 2025/11/21</div>
+                        </div>
+                        <span class="job-status status-active">موافق عليه (0 متقدم)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-box" style="margin-top: 30px;">
+                <h3>طلبات التقديم الحديثة</h3>
+                <div class="job-list">
+
+                    <div class="job-item">
+                        <div>
+                            <div class="job-title">محمد خالد كرم</div>
+                            <div class="job-date">الجامعة الإسلامية • التقديم على: Ai</div>
+                        </div>
+                        <span class="job-status" style="background: #FEE2E2; color: #EF4444;">مرفوض</span>
+                    </div>
+
+                    <div class="job-item">
+                        <div>
+                            <div class="job-title">محمد خالد كرم</div>
+                            <div class="job-date">الجامعة الإسلامية • التقديم على: باك اند</div>
+                        </div>
+                        <span class="job-status" style="background: #D1FAE5; color: #065F46;">مقبول</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="manage-jobs-section" class="card-content" style="display: none;">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>إجمالي الفرص</h4><span>4</span>
+                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>إجمالي المتقدمين</h4><span>0</span>
+                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>في الانتظار</h4><span>1</span>
+                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>المقبولين</h4><span>1</span>
+                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-check-double"></i></div>
+                </div>
+            </div>
+            <div class="filter-container">
+                <div class="filter-title">
+                    <h3>إدارة الفرص</h3>
+                    <p>يمكنك تصفية الفرص حسب الحالة</p>
+                </div>
+            </div>
+            <div class="new-box" style="margin-top: 15px;">
+                <div class="filter-options">
+                    <button class="filter-btn active" data-status="all">الكل</button>
+                    <button class="filter-btn" data-status="waiting">في الانتظار</button>
+                    <button class="filter-btn" data-status="accepted">موافق عليه</button>
+                    <button class="filter-btn" data-status="rejected">مرفوض</button>
+                </div>
+            </div>
+            <div class="new-box" style="margin-top: 25px; overflow-x: auto;">
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3>إدارة الفرص</h3>
+                </div>
+
+                <table class="manage-table">
+                    <thead>
+                        <tr>
+                            <th>العنوان</th>
+                            <th>النوع</th>
+                            <th>الحالة</th>
+                            <th>المتقدمين</th>
+                            <th>آخر موعد</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>باك اند</td>
+                            <td><span class="type-tag">عن بعد</span></td>
+                            <td><span class="status-badge ref unread job-status">في الانتظار</span></td>
+                            <td>0</td>
+                            <td>2025-12-02</td>
+                            <td class="actions">
+                                <button class="edit-btn" onclick="openEditModal('باك اند', 'عن بعد', '2025-12-02')">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>باك اند</td>
+                            <td><span class="type-tag">عن بعد</span></td>
+                            <td><span class="status-badge accept unread job-status">في الانتظار</span></td>
+                            <td>0</td>
+                            <td>2025-12-02</td>
+                            <td class="actions">
+                                <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>باك اند</td>
+                            <td><span class="type-tag">عن بعد</span></td>
+                            <td><span class="status-badge accept unread job-status">في الانتظار</span></td>
+                            <td>0</td>
+                            <td>2025-12-02</td>
+                            <td class="actions">
+                                <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>باك اند</td>
+                            <td><span class="type-tag">عن بعد</span></td>
+                            <td><span class="status-badge ref unread job-status">في الانتظار</span></td>
+                            <td>0</td>
+                            <td>2025-12-02</td>
+                            <td class="actions">
+                                <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="publish-section" class="card-content" style="display: none;">
+            <div class="form-container">
+                <div class="form-header">
+                    <h3>إضافة فرصة تدريب جديدة</h3>
+                    <p>يرجى تعبئة كافة البيانات المطلوبة لنشر الفرصة للطلاب</p>
+                </div>
+
+                <form id="publishForm" class="publish-form">
+                    <div class="form-grid">
+                        <div class="input-group full-width">
+                            <label><i class="fa-solid fa-building"></i> اسم المؤسسة</label>
+                            <input type="text" placeholder="أدخل اسم المؤسسة" required>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label><i class="fa-solid fa-tag"></i> عنوان الفرصة</label>
+                            <input type="text" placeholder="مثلاً: مطور واجهات أمامية" required>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label><i class="fa-solid fa-align-left"></i> وصف الفرصة</label>
+                            <textarea rows="5" placeholder="أدخل وصفاً تفصيلياً للفرصة والمهام المطلوبة"></textarea>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label><i class="fa-solid fa-location-dot"></i> الموقع</label>
+                            <input type="text" placeholder="مثال: غزة - الرمال" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label><i class="fa-solid fa-calendar-day"></i> تاريخ البدء</label>
+                            <input type="date" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label><i class="fa-solid fa-calendar-check"></i> تاريخ الانتهاء</label>
+                            <input type="date" required>
+                        </div>
+
+
+                        <div class="input-group full-width">
+                            <label><i class="fa-solid fa-code"></i> المهارات المطلوبة</label>
+                            <input type="text" placeholder="مثلاً: JavaScript, React, CSS">
+                        </div>
+
+
+                        <div class="input-group full-width">
+                            <label><i class="fa-solid fa-briefcase"></i> السعر (شيكل)</label>
+                            <input type="text" placeholder="مثال: 50" required>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label><i class="fa-solid fa-briefcase"></i> رابط الصورة</label>
+                            <input type="text" placeholder="D:\منصة Nexus\dashboard\index.html" required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-publish full-width">نشر الفرصة الآن</button>
+                        <!-- <button type="reset" class="btn-reset">إعادة ضبط</button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="student-applications-section" class="card-content" style="display: none;">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>إجمالي الطلبات</h4><span>1</span>
+                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-users-rectangle"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>قيد المراجعة</h4><span>0</span>
+                    </div>
+                    <div class="stat-icon alert"><i class="fa-solid fa-spinner"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>مقبول</h4><span>0</span>
+                    </div>
+                    <div class="stat-icon success"><i class="fa-solid fa-user-check"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>مرفوض</h4><span>1</span>
+                    </div>
+                    <div class="stat-icon danger"><i class="fa-solid fa-user-xmark"></i></div>
+                </div>
+            </div>
+
+            <div class="new-box" style="margin-top: 20px;">
+                <div class="filter-options">
+                    <button class="filter-btn active">الكل</button>
+                    <button class="filter-btn">قيد المراجعة</button>
+                    <button class="filter-btn">مقبول</button>
+                    <button class="filter-btn">مرفوض</button>
+                </div>
+            </div>
+
+            <div class="applications-container" style="margin-top: 25px;">
+
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="student-meta">
+                            <img src="../img/hero.png" alt="Student" class="student-img">
+                            <div>
+                                <h3 class="student-name">محمد خالد كرم</h3>
+                                <p class="app-date">تاريخ التقديم: 11/02/2025</p>
+                            </div>
+                        </div>
+                        <span class="status-badge danger job-status"
+                            style="    background: #FEE2E2; color: #EF4444;">مرفوض</span>
+                    </div>
+
+                    <div class="app-body">
+                        <div class="info-item">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span><strong>الفرصة:</strong> AI Developer</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <span><strong>نوع الفرصة:</strong> عن بعد</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-calendar-alt"></i>
+                            <span><strong>آخر موعد:</strong> 04-03-2025</span>
+                        </div>
+                    </div>
+
+                    <div class="app-footer">
+                        <div class="action-btns">
+                            <button class="btn-success"><i class="fa-solid fa-check"></i> قبول</button>
+                            <button class="btn-danger"><i class="fa-solid fa-xmark"></i> رفض</button>
+                        </div>
+                        <button class="btn-view-cv"><i class="fa-solid fa-file-pdf"></i> عرض السيرة الذاتية</button>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="student-meta">
+                            <img src="../img/hero.png" alt="Student" class="student-img">
+                            <div>
+                                <h3 class="student-name">محمد خالد كرم</h3>
+                                <p class="app-date">تاريخ التقديم: 11/02/2025</p>
+                            </div>
+                        </div>
+                        <span class="status-badge danger job-status"
+                            style="    background: #FEE2E2; color: #EF4444;">مرفوض</span>
+                    </div>
+
+                    <div class="app-body">
+                        <div class="info-item">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span><strong>الفرصة:</strong> AI Developer</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <span><strong>نوع الفرصة:</strong> عن بعد</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-calendar-alt"></i>
+                            <span><strong>آخر موعد:</strong> 04-03-2025</span>
+                        </div>
+                    </div>
+
+                    <div class="app-footer">
+                        <div class="action-btns">
+                            <button class="btn-success"><i class="fa-solid fa-check"></i> قبول</button>
+                            <button class="btn-danger"><i class="fa-solid fa-xmark"></i> رفض</button>
+                        </div>
+                        <button class="btn-view-cv"><i class="fa-solid fa-file-pdf"></i> عرض السيرة الذاتية</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="settings-section" class="card-content" style="display: none;">
+            <div class="filter-container">
+                <div class="filter-title">
+                    <h3>إعدادات الملف الشخصي</h3>
+                    <p>تحديث بيانات الشركة والمعلومات التي تظهر للطلاب</p>
+                </div>
+                <button class="btn-success" style="padding: 10px 25px;"><i class="fa-solid fa-floppy-disk"></i> حفظ
+                    التغييرات</button>
+            </div>
+
+            <div class="settings-grid" style="margin-top: 25px;">
+                <div class="recent-box profile-upload-box">
+                    <h3>شعار الشركة</h3>
+                    <div class="profile-avatar-container">
+                        <div class="avatar-wrapper">
+                            <img src="../img/jops-front.jpg" id="companyLogoPreview" alt="Logo">
+                            <label for="logoUpload" class="upload-badge">
+                                <i class="fa-solid fa-camera"></i>
+                                <input type="file" id="logoUpload" hidden accept="image/*">
+                            </label>
+                        </div>
+                        <p>يفضل رفع صورة بمقاس 400x400 بكسل</p>
+                    </div>
+                </div>
+
+                <div class="recent-box">
+                    <h3>المعلومات الأساسية</h3>
+                    <div class="settings-form">
+                        <div class="input-group">
+                            <label>اسم الشركة</label>
+                            <input type="text" value="شركة كود بنجاح" placeholder="أدخل اسم الشركة">
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>البريد الإلكتروني</label>
+                                <input type="email" value="info@codesuccess.ps">
+                            </div>
+                            <div class="input-group">
+                                <label>رقم التواصل</label>
+                                <input type="text" value="0599000000">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>الموقع الإلكتروني</label>
+                            <input type="url" placeholder="https://example.com">
+                        </div>
+                        <div class="input-group">
+                            <label>وصف الشركة</label>
+                            <textarea rows="4" placeholder="اكتب نبذة عن الشركة ومجال عملها..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="editModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>تعديل الفرصة</h3>
+                <button class="close-modal" onclick="closeEditModal()">&times;</button>
+            </div>
+            <form id="editForm" class="modal-form">
+                <div class="input-group">
+                    <label>العنوان</label>
+                    <input type="text" id="editTitle" placeholder="مثلاً: باك اند">
+                </div>
+                <div class="input-group">
+                    <label>النوع</label>
+                    <input type="text" id="editType" placeholder="عن بعد / حضوري">
+                </div>
+                <div class="input-group">
+                    <label>آخر موعد</label>
+                    <input type="date" id="editDate">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" onclick="closeEditModal()">إلغاء</button>
+                    <button type="submit" class="btn-save">حفظ التعديلات</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openEditModal(title, type, date) {
+            document.getElementById('editModal').style.display = 'flex';
+
+            if (title) document.getElementById('editTitle').value = title;
+            if (type) document.getElementById('editType').value = type;
+            if (date) document.getElementById('editDate').value = date;
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
+
+        window.onclick = function (event) {
+            let modal = document.getElementById('editModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <script>
+        const menuItems = document.querySelectorAll('.sidebar-menu .menu-item');
+        const sections = document.querySelectorAll('.main-content > div[id]');
+        const headerTitle = document.getElementById('header-title');
+
+        function showSection(targetId) {
+            sections.forEach(section => {
+                section.style.display = 'none';
+                section.style.opacity = '0';
+            });
+
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                setTimeout(() => {
+                    targetSection.style.opacity = '1';
+                    targetSection.style.transition = 'opacity 0.3s ease';
+                }, 50);
+            }
+        }
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('data-target');
+                const sectionName = this.querySelector('span').innerText;
+
+                if (headerTitle) headerTitle.innerText = sectionName;
+
+                menuItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+
+                showSection(targetId);
+            });
+        });
+    </script>
+</body>
+
+</html>

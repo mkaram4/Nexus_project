@@ -1,0 +1,105 @@
+.stat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.blue-light {
+    background: #eff6ff;
+    color: #1e40af;
+}
+
+.green-light {
+    background: #f0fdf4;
+    color: #166534;
+}
+
+.purple-light {
+    background: #faf5ff;
+    color: #6b21a8;
+}
+
+.orange-light {
+    background: #fff7ed;
+    color: #9a3412;
+}
+
+.chart-container {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.simple-bar-chart {
+    height: 150px;
+    border-bottom: 2px solid #e2e8f0;
+    border-left: 2px solid #e2e8f0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.bar {
+    width: 40px;
+    background: #0ea5e9;
+    border-radius: 4px 4px 0 0;
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 10px;
+}
+
+.weekly-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.weekly-card {
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.weekly-card strong {
+    font-size: 24px;
+}
+
+.weekly-card span {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.weekly-card.blue {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.weekly-card.green {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.weekly-card.purple {
+    background: #f3e8ff;
+    color: #7e22ce;
+}
