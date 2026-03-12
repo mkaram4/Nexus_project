@@ -10,7 +10,6 @@
     padding: 25px;
     border-radius: 15px;
     border-top: 5px solid #31787D;
-    /* اللون المعتمد */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
@@ -44,10 +43,8 @@
     font-size: 0.9rem;
 }
 
-/* تصميم زر الإرسال الأساسي */
 .btn-primary {
     background-color: #31787D !important;
-    /* اللون المعتمد */
     color: #ffffff;
     border: none;
     padding: 12px 20px;
@@ -63,15 +60,12 @@
     margin-top: 10px;
 }
 
-/* تأثير عند تمرير الماوس */
 .btn-primary:hover {
     background-color: #265e62 !important;
-    /* درجة أغمق قليلاً */
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(49, 120, 125, 0.3);
 }
 
-/* أيقونة الرفع داخل الزر */
 .btn-primary i {
     font-size: 1.1rem;
 }
