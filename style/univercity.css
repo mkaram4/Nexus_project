@@ -1,0 +1,77 @@
+.coordination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.coord-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    border-top: 5px solid #31787D;
+    /* اللون المعتمد */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.coord-card h3 {
+    color: #31787D;
+    margin-bottom: 15px;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #31787D;
+    color: #31787D;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: #31787D;
+    color: white;
+}
+
+.data-table {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+/* تصميم زر الإرسال الأساسي */
+.btn-primary {
+    background-color: #31787D !important;
+    /* اللون المعتمد */
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* تأثير عند تمرير الماوس */
+.btn-primary:hover {
+    background-color: #265e62 !important;
+    /* درجة أغمق قليلاً */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(49, 120, 125, 0.3);
+}
+
+/* أيقونة الرفع داخل الزر */
+.btn-primary i {
+    font-size: 1.1rem;
+}

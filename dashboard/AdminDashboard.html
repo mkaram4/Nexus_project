@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../style/dash-student-order.css" />
     <link rel="stylesheet" href="../style/adminDashboard.css" />
     <link rel="stylesheet" href="../style/footer.css" />
+    <link rel="stylesheet" href="../style/univercity.css" />
     <link rel="stylesheet" href="../style/notifi.css" />
     <link rel="stylesheet" href="../style/report.css" />
     <link rel="stylesheet" href="../style/company_reqest.css" />
@@ -27,7 +28,6 @@
 
 
 <body>
-
     <aside class="sidebar">
         <div class="sidebar-header">
             <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
@@ -48,6 +48,9 @@
             </a>
             <a href="#" class="menu-item" data-target="company-requests-section">
                 <i class="fa-solid fa-building"></i> <span>طلبات الشركات</span>
+            </a>
+            <a href="#" class="menu-item" data-target="nexus-coordination-section">
+                <i class="fa-solid fa-building"></i> <span>الجامعات  </span>
             </a>
             <a href="#" class="menu-item" data-target="notifications-section">
                 <i class="fa-solid fa-bell"></i> <span>الإشعارات</span>
@@ -140,6 +143,9 @@
                 </div>
             </div>
         </header>
+
+
+
 
         <div id="admin-overview" class="card-content">
             <div class="stats-grid">
@@ -318,6 +324,32 @@
 
         </div>
 
+        <div id="nexus-coordination-section" class="content-section" style="display: none;">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-file-shield" style="margin: 20px;"></i> مركز التنسيق وتبادل الملفات</h2>
+            </div>
+
+            <div class="coordination-grid">
+                <div class="coord-card">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> بوابة الجامعة</h3>
+                    <p>استلام أسماء الطلاب المتدربين والملفات من الشركات</p>
+                    <div class="data-table">
+                        <div class="data-row"><span>الطالب: أحمد محمد</span> <span>الشركة: لوكس لايتنج</span></div>
+                    </div>
+                    <button class="btn-outline"><i class="fa-solid fa-download"></i> استلام ملف من شركة</button>
+                    <button class="btn-primary"><i class="fa-solid fa-upload"></i> إرسال ملف لشركة</button>
+                </div>
+
+                <div class="coord-card">
+                    <h3><i class="fa-solid fa-building"></i> بوابة الشركة</h3>
+                    <p>تبادل التقارير والملفات الرسمية مع الجامعة</p>
+                    <div class="action-zone">
+                        <button class="btn-outline"><i class="fa-solid fa-download"></i> استلام ملف من جامعة</button>
+                        <button class="btn-primary"><i class="fa-solid fa-upload"></i> إرسال ملف لجامعة</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div id="manage-opportunities-section" class="card-content" style="display: none;">
             <div class="filter-container">

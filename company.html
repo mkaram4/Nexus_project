@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Section</title>
+    <link rel="shortcut icon" href="img/logo.jpeg" type>
+
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style/style.css" />
+    <!-- <link rel="stylesheet" href="style/heder.css" /> -->
+    <link rel="stylesheet" href="style/jops.css" />
+    <link rel="stylesheet" href="style/profile.css" />
+    <link rel="stylesheet" href="style/opp.css" />
+    <link rel="stylesheet" href="style/applay.css" />
+    <link rel="stylesheet" href="style/footer.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- ===== Navbar ===== -->
+    <header class="navbar">
+        <div class="navbar__wrapper">
+
+            <div class="navbar__logo">
+                <img src="img/logo.jpeg" alt="" class="logo">
+                <p>Nexus</p>
+            </div>
+
+            <nav class="navbar__menu">
+                <a href="#" style="border-bottom: 2px solid #178A9A;">الرئيسية</a>
+                <a href="opppage.html">الفرص</a>
+                <a href="#">الشركات</a>
+                <a href="#">الجامعات</a>
+                <a href="#">من نحن</a>
+                <a href="#">تواصل معنا</a>
+            </nav>
+            <div class="header-actions">
+                <div class="user-dropdown">
+                    <div class="profile-trigger" onclick="toggleDropdown()">
+                        <img src="img/hero.png" alt="User" class="nav-avatar">
+                    </div>
+
+                    <div class="dropdown-menu" id="userMenu">
+                        <a href="profile-setting.html" class="dropdown-item">
+                            <i class="fa-regular fa-user"></i>
+                            <span>الملف الشخصي</span>
+                        </a>
+                        <a href="profile-password.html" class="dropdown-item">
+                            <i class="fa-regular fa-sun"></i>
+                            <span>الإعدادات</span>
+                        </a>
+                        <hr class="dropdown-divider">
+                        <a href="index.html" class="dropdown-item logout">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span>تسجيل الخروج</span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="notification-wrapper">
+                    <button class="noti-btn" id="notiBtn">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="noti-badge">3</span>
+                    </button>
+
+                    <div class="noti-dropdown" id="notiDropdown">
+                        <div class="noti-header">
+                            <h3>الإشعارات</h3>
+                            <button class="clear-all">مسح الكل</button>
+                        </div>
+
+                        <div class="noti-list">
+                            <div class="noti-item unread">
+                                <div class="noti-icon"><i class="fa-solid fa-briefcase"></i></div>
+                                <div class="noti-content">
+                                    <p><strong>فرصة تدريب جديدة:</strong> تم نشر فرصة بعنوان "تسويق رقمي"</p>
+                                    <span>منذ 5 دقائق</span>
+                                </div>
+                                <button class="delete-noti"><i class="fa-regular fa-trash-can"></i></button>
+                            </div>
+
+                            <div class="noti-item">
+                                <div class="noti-icon alert"><i class="fa-solid fa-circle-exclamation"></i></div>
+                                <div class="noti-content">
+                                    <p>تم رفض طلبك للتدريب في شركة <strong>أبجد</strong></p>
+                                    <span>منذ ساعتين</span>
+                                </div>
+                                <button class="delete-noti"><i class="fa-regular fa-trash-can"></i></button>
+                            </div>
+
+                            <div class="noti-item success">
+                                <div class="noti-icon check"><i class="fa-solid fa-circle-check"></i></div>
+                                <div class="noti-content">
+                                    <p>تم قبول طلبك المبدئي لفرصة "فرونت إند"</p>
+                                    <span>أمس</span>
+                                </div>
+                                <button class="delete-noti"><i class="fa-regular fa-trash-can"></i></button>
+                            </div>
+                        </div>
+                        <div class="noti-footer">
+                            <a href="#">عرض جميع الإشعارات</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="jobs">
+
+        <div class="container">
+
+            <!-- Section Title -->
+            <div class="jobs__header">
+                <h2> صفحة الشركات</h2>
+                <p> استكشف الشركات المضافة مؤخراً في غزة</p>
+            </div>
+
+            <!-- Jobs Grid -->
+            <div class="jobs__grid">
+
+                <div class="job-card">
+                    <img src="img/jops-front.jpg" alt="Front-End Development">
+                    <div class="job-card__body">
+                        <h4 class="job-card__title">Front-End Developer</h4>
+                        <p class="job-card__company">شركة تقنية</p>
+                        <p class="job-card__company">شهرين غزة</p>
+                        <span class="span-statas">حصري</span>
+                        <div class="job-card__footer">
+                            <span style="color: rgb(20, 127, 20); font-size: 1.5rem; margin-top: 15px;">30 شيكل</span>
+                            <button class="btn btn--primary">تقديم</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <img src="img/jops-ux.png" alt="UI/UX Design">
+                    <div class="job-card__body">
+                        <h4 class="job-card__title">UI / UX Designer</h4>
+                        <p class="job-card__company">شركة تصميم</p>
+                        <p class="job-card__company">شهرين غزة</p>
+                        <span class="span-statas">حصري</span>
+                        <div class="job-card__footer">
+                            <!-- <span>120 متقدم</span> -->
+                            <span style="color: rgb(20, 127, 20); font-size: 1.5rem; margin-top: 15px;">30 شيكل</span>
+                            <button class="btn btn--primary">تقديم</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <img src="img/jops-backend.jpg" alt="Back-End Developer">
+                    <div class="job-card__body">
+                        <h4 class="job-card__title">Back-End Developer</h4>
+                        <p class="job-card__company">شركة برمجيات</p>
+                        <p class="job-card__company">شهرين غزة</p>
+                        <span class="span-statas">حصري</span>
+
+                        <div class="job-card__footer">
+                            <span style="color: rgb(20, 127, 20); font-size: 1.5rem; margin-top: 15px;">30 شيكل</span>
+                            <button class="btn btn--primary">تقديم</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <img src="img/jops-front.jpg" alt="Front-End Development">
+                    <div class="job-card__body">
+                        <h4 class="job-card__title">Front-End Developer</h4>
+                        <p class="job-card__company">شركة تقنية</p>
+                        <p class="job-card__company">شهرين غزة</p>
+                        <span class="span-statas">حصري</span>
+                        <div class="job-card__footer">
+                            <span style="color: rgb(20, 127, 20); font-size: 1.5rem; margin-top: 15px;">30 شيكل</span>
+                            <button class="btn btn--primary">تقديم</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <img src="img/jops-ux.png" alt="UI/UX Design">
+                    <div class="job-card__body">
+                        <h4 class="job-card__title">UI / UX Designer</h4>
+                        <p class="job-card__company">شركة تصميم</p>
+                        <p class="job-card__company">شهرين غزة</p>
+                        <span class="span-statas">حصري</span>
+                        <div class="job-card__footer">
+                            <span style="color: rgb(20, 127, 20); font-size: 1.5rem; margin-top: 15px;">30 شيكل</span>
+                            <button class="btn btn--primary">تقديم</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <img src="img/jops-backend.jpg" alt="Back-End Developer">
+                    <div class="job-card__body">
+                        <h4 class="job-card__title">Back-End Developer</h4>
+                        <p class="job-card__company">شركة برمجيات</p>
+                        <p class="job-card__company">شهرين غزة</p>
+                        <span class="span-statas">حصري</span>
+
+                        <div class="job-card__footer">
+                            <span style="color: rgb(20, 127, 20); font-size: 1.5rem; margin-top: 15px;">30 شيكل</span>
+                            <button class="btn btn--primary">تقديم</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="job-card">
+                    <img src="img/jops-front.jpg" alt="Front-End Development">
+                    <div class="job-card__body">
+                        <h4 class="job-card__title">Front-End Developer</h4>
+                        <p class="job-card__company">شركة تقنية</p>
+                        <p class="job-card__company">شهرين غزة</p>
+                        <span class="span-statas">حصري</span>
+                        <div class="job-card__footer">
+                            <span style="color: rgb(20, 127, 20); font-size: 1.5rem; margin-top: 15px;">30 شيكل</span>
+                            <button class="btn btn--primary">تقديم</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="job-card">
+                    <img src="img/jops-backend.jpg" alt="Back-End Developer">
+                    <div class="job-card__body">
+                        <h4 class="job-card__title">Back-End Developer</h4>
+                        <p class="job-card__company">شركة برمجيات</p>
+                        <p class="job-card__company">شهرين غزة</p>
+                        <span class="span-statas">حصري</span>
+
+                        <div class="job-card__footer">
+                            <span style="color: rgb(20, 127, 20); font-size: 1.5rem; margin-top: 15px;">30 شيكل</span>
+                            <a href="applay.html"> <button class="btn btn--primary">تقديم </button></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="companies__footer">
+            <a href="#" class="companies__link">عرض جميع الفرص <span>↓</span></a>
+        </div>
+    </section>
+
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer__wrapper">
+            <div class="footer__col footer__about">
+                <h2 class="footer__logo">Nexus <i class="fa-solid fa-graduation-cap"></i></h2>
+                <p>منصة رقمية تربط طلاب الجامعات في غزة بالشركات التي تقدم فرص التدريب والتطوير المهني.</p>
+                <div class="footer__social">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__title">روابط سريعة</h4>
+                <ul class="footer__links">
+                    <li><a href="#">فرص التدريب</a></li>
+                    <li><a href="#">الشركات</a></li>
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__title">تواصل معنا</h4>
+                <ul class="footer__contact">
+                    <li><i class="fa-solid fa-location-dot"></i> غزة، فلسطين</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@gazatraininghub.com</li>
+                    <li><i class="fa-solid fa-phone"></i> +970 8 123 4567</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const notiBtn = document.getElementById('notiBtn');
+        const notiDropdown = document.getElementById('notiDropdown');
+
+        notiBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            notiDropdown.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!notiDropdown.contains(e.target) && e.target !== notiBtn) {
+                notiDropdown.classList.remove('active');
+            }
+        });
+
+    </script>
+
+    <script>
+        function toggleDropdown() {
+            const menu = document.getElementById('userMenu');
+            menu.classList.toggle('active');
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.closest('.user-dropdown')) {
+                const dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].classList.remove('active');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
